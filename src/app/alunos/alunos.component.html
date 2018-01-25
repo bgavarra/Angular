@@ -1,0 +1,14 @@
+{{selectedAluno.name | uppercase}}
+<div *ngIf="selectedAluno">
+  <label>name:
+
+  </label>
+  <input [(ngModel)]="selectedAluno.name" placeholder="name">
+</div>
+
+<h2> Meus Alunos</h2>
+<ul class="alunos">
+  <li *ngFor="let aluno of alunos" (click)="onSelect(aluno)" [class.selected]="aluno === selectedAluno">
+    <span class="badge"> {{aluno.id}}</span> {{aluno.name}}
+  </li>
+</ul>
